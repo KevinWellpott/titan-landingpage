@@ -27,7 +27,7 @@ body {
 
 
 .card {
-    width: 400px;
+    width: 90%;
     padding: 20px;
     margin-bottom: 20px;
     min-height: 520px;
@@ -88,59 +88,73 @@ body {
 }
 
 .visitenkarten-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
+  display: flex;
+  flex-direction: row; /* Standard: nebeneinander */
+  gap: 16px;
+  /* optional: flex-wrap: wrap; */
 }
 
-.card-main-info {
-    display: flex;
+/* Ab 900px Breite und kleiner: untereinander */
+@media (max-width: 900px) {
+  .visitenkarten-wrapper {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.card-side-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    flex-grow: 1;
-    align-items: center;
-    gap: 16px;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-top: auto;
-    margin-bottom: 20px;
-}
-
-
-
-.feature {
-    display: flex;
-    align-items: flex-start;
-    /* sorgt für gleiche Oberkante */
-    gap: 10px;
-    /* Abstand zwischen Haken und Text */
+  }
+  /* optional, falls Kinder feste Breiten haben: */
+  .visitenkarte {
     width: 100%;
-    /* volle Breite */
-    text-align: left;
-    /* Text linksbündig */
+  }
 }
 
-.check {
-    flex-shrink: 0;
-    /* Haken bleibt fixiert */
-    font-size: 20px;
-    /* Haken-Größe */
-    line-height: 1.2;
-    margin-top: 2px;
-    /* optische Feinkorrektur */
-}
 
-.feature p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.5;
-}
+
+    .card-main-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .card-side-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        flex-grow: 1;
+        align-items: center;
+        gap: 16px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-top: auto;
+        margin-bottom: 20px;
+    }
+
+
+
+    .feature {
+        display: flex;
+        align-items: flex-start;
+        /* sorgt für gleiche Oberkante */
+        gap: 10px;
+        /* Abstand zwischen Haken und Text */
+        width: 100%;
+        /* volle Breite */
+        text-align: left;
+        /* Text linksbündig */
+    }
+
+    .check {
+        flex-shrink: 0;
+        /* Haken bleibt fixiert */
+        font-size: 20px;
+        /* Haken-Größe */
+        line-height: 1.2;
+        margin-top: 2px;
+        /* optische Feinkorrektur */
+    }
+
+    .feature p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
