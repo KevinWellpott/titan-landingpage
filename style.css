@@ -1,5 +1,5 @@
 .profile-img {
-    height: 200px;
+    height: 150px;
 }
 
 .link-icon {
@@ -14,6 +14,8 @@
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
+    color: aliceblue;
+    background-color: black;
 }
 
 body {
@@ -26,19 +28,22 @@ body {
 .card {
     width: 300px;
     padding: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     border: 1px solid rgb(43, 166, 57, 0.19);
     border-radius: 16px;
-    background-color: rgb(245, 245, 245);
-    box-shadow: 0px 2px 10px rgba(43, 166, 57, 0.19),
-        0px 8px 41px rgba(43, 166, 57, 0.19),
-        0px 18px 92px rgba(43, 166, 57, 0.19),
-        0px 32px 163px rgba(43, 166, 57, 0.19);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 6px 10px rgba(97, 57, 137, 0.05),
+        0px 24px 41px rgba(97, 57, 137, 0.10),
+        0px 53px 92px rgba(97, 57, 137, 0.14),
+        0px 95px 163px rgba(97, 57, 137, 0.19);
+}
 
-
-
+.visitenkarten-container{
+display: flex;
+flex-direction: row;
 }
 
 .card-main-info {
@@ -58,7 +63,7 @@ body {
     gap: 8px;
 }
 
-.social-media-list{
+.social-media-list {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -67,6 +72,6 @@ body {
     margin-top: 16px;
 }
 
-.link-icon:hover{
+.link-icon:hover {
     filter: drop-shadow(0 0 8px green);
 }
