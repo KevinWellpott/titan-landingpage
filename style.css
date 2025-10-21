@@ -1,164 +1,211 @@
-.profile-img {
-    height: 150px;
-}
-
-.link-icon {
-    height: 28px;
-
-}
-
-.map-icon {
-    height: 16px;
-}
-
+/* === GLOBAL STYLES === */
 * {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0;
-    color: aliceblue;
-    background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: aliceblue;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* === HEADER === */
+.header-navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Logo links, Burger rechts */
+  align-items: center;
+  width: 100%;
+  padding: 20px 60px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.338);
+  z-index: 10;
+  background-color: black;
+}
+
+.logo-header {
+  max-width: 140px;
+}
+
+/* Navigation (Desktop) */
+.header-navbar-content {
+  display: flex;
+  gap: 60px;
+}
+
+.header-navbar-content a {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.header-navbar-content a:hover {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* Burger Button */
+.burger-btn {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+  transition: transform 0.3s ease;
+}
+
+/* === BURGER ANIMATION === */
+.burger-btn.active {
+  transform: rotate(90deg);
+}
+
+/* === CARD LAYOUT === */
+.visitenkarten-wrapper {
+    margin-top: 42px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 40px 0;
+}
 
 .card {
-    width: 90%;
-    padding: 20px;
-    margin-bottom: 20px;
-    min-height: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    border-radius: 16px;
-    justify-content: space-between;
-    background-color: #000000;
-    box-shadow: 0px 6px 10px rgba(97, 57, 137, 0.05),
-        0px 24px 41px rgba(97, 57, 137, 0.10),
-        0px 53px 92px rgba(97, 57, 137, 0.14),
-        0px 95px 163px rgba(97, 57, 137, 0.19);
-    transform: translateZ(0);
-    isolation: isolate;
-}
-
-.contact-data {
-    margin-top: 36px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border: 0;
-    padding: 0;
-}
-
-.contact-data .contact-btn {
-    -webkit-appearance: none;
-    appearance: none;
-    display: inline-block;
-    width: 80%;
-    padding: 12px 24px;
-    border: 1px solid grey;
-    border-radius: 24px;
-    background: transparent;
-    color: #fff;
-    text-align: center;
-    line-height: 1.35;
-    cursor: pointer;
-    outline: none;
-    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
-}
-
-.contact-data .contact-btn:hover {
-    border-color: #00ff88;
-    box-shadow: 0px 0px 5px rgba(244, 241, 241, 0.05),
-        0px 1px 41px rgba(244, 241, 241, 0.10),
-        0px 2px 92px rgba(244, 241, 241, 0.16),
-        0px 3px 163px rgba(244, 241, 241, 0.21);
-
-    transform: translateY(-2px);
-}
-
-.button {
-    border: none;
-    background: none;
-    outline: none;
-}
-
-.visitenkarten-wrapper {
+  width: 90%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #000;
+  box-shadow:
+    0px 6px 10px rgba(97, 57, 137, 0.05),
+    0px 24px 41px rgba(97, 57, 137, 0.10),
+    0px 53px 92px rgba(97, 57, 137, 0.14),
+    0px 95px 163px rgba(97, 57, 137, 0.19);
   display: flex;
-  flex-direction: row; /* Standard: nebeneinander */
+  flex-direction: column;
+  justify-content: space-between;
   gap: 16px;
-  /* optional: flex-wrap: wrap; */
 }
 
-/* Ab 900px Breite und kleiner: untereinander */
+/* === CARD CONTENT === */
+.card-main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-img {
+  height: 150px;
+  border-radius: 8px;
+}
+
+.card-side-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 25px;
+}
+
+/* === FEATURE LIST === */
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.check {
+  flex-shrink: 0;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.feature p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* === CONTACT BUTTON === */
+.contact-data {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-btn {
+  display: inline-block;
+  width: 80%;
+  padding: 12px 24px;
+  border: 1px solid grey;
+  border-radius: 24px;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.contact-btn:hover {
+  border-color: #00ff88;
+  box-shadow: 0px 1px 20px rgba(0, 255, 136, 0.3);
+  transform: translateY(-2px);
+}
+
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 900px) {
+  /* Header */
+  .header-navbar {
+    justify-content: space-between; /* Logo links, Burger rechts */
+    padding: 20px;
+  }
+
+  .burger-btn {
+    display: block; /* Burger sichtbar */
+  }
+
+  /* Menü verstecken */
+  .header-navbar-content {
+    position: absolute;
+    top: 100%;
+    right: 20px; /* Menü rechts ausklappend */
+    background-color: black;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  /* Menü sichtbar */
+  .header-navbar-content.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Karten untereinander */
   .visitenkarten-wrapper {
     flex-direction: column;
+    align-items: center;
   }
-  /* optional, falls Kinder feste Breiten haben: */
+
   .visitenkarte {
     width: 100%;
   }
 }
-
-
-
-    .card-main-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .card-side-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        flex-grow: 1;
-        align-items: center;
-        gap: 16px;
-        padding-left: 25px;
-        padding-right: 25px;
-        margin-top: auto;
-        margin-bottom: 20px;
-    }
-
-
-
-    .feature {
-        display: flex;
-        align-items: flex-start;
-        /* sorgt für gleiche Oberkante */
-        gap: 10px;
-        /* Abstand zwischen Haken und Text */
-        width: 100%;
-        /* volle Breite */
-        text-align: left;
-        /* Text linksbündig */
-    }
-
-    .check {
-        flex-shrink: 0;
-        /* Haken bleibt fixiert */
-        font-size: 20px;
-        /* Haken-Größe */
-        line-height: 1.2;
-        margin-top: 2px;
-        /* optische Feinkorrektur */
-    }
-
-    .feature p {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.5;
-    }
