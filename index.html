@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 
 <head>
@@ -9,39 +8,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<body>
 
-<div>
+    <div class="visitenkarten-wrapper">
 
-    <div class="Visitenkarten-container">
-        <article class="card">
-            <section class="card-main-info">
-                <img class="profile-img" src="./assets/Bildschirmfoto 2025-10-21 um 14.18.44.png" height="50px" alt="Profilbild">
-                <h2>
-                    Simon Paweletz
-                </h2>
-                <p>Founder der Titan GmbH</p>
-            </section>
+        <!-- SIMON -->
+        <div class="visitenkarte">
+            <article class="card">
+                <section class="card-main-info">
+                    <img class="profile-img" src="./assets/2.png" alt="Profilbild">
+                    <h2>Simon Paweletz</h2>
+                    <p>Founder der Titan GmbH</p>
+                </section>
 
-            <section class="card-side-info">
-                <p><img class="map-icon" src="./assets/mapmarker-icon.png" alt="Location Icon">Frankfurt </p>
-            </section>
-        </article>
+                <section class="card-side-info">
+                    <div class="feature"><span class="check">✅</span>
+                        <p>Fachinformatiker für Anwendungsentwicklung</p>
+                    </div>
+                    <div class="feature"><span class="check">✅</span>
+                        <p>zertifizierter Fachberater in Softwaretechniken</p>
+                    </div>
+                    <div class="feature"><span class="check">✅</span>
+                        <p>über 200 betreute Kundenprojekte</p>
+                    </div>
+
+                    <div class="contact-data">
+                        <button id="contact-simon" class="contact-btn">
+                            +49 160 7660350<br>
+                            simon@titanagency.de
+                        </button>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <!-- KEVIN -->
+        <div class="visitenkarte">
+            <article class="card">
+                <section class="card-main-info">
+                    <img class="profile-img" src="./assets/1.png" alt="Profilbild">
+                    <h2>Kevin Wellpott</h2>
+                    <p>Co-Founder der Titan GmbH</p>
+                </section>
+
+                <section class="card-side-info">
+                    <div class="feature"><span class="check">✅</span>
+                        <p>Fachinformatiker für Cybersecurity</p>
+                    </div>
+                    <div class="feature"><span class="check">✅</span>
+                        <p>zertifizierter Fachberater in Systemintegration</p>
+                    </div>
+                    <div class="feature"><span class="check">✅</span>
+                        <p>über 150 betreute Kundenprojekte</p>
+                    </div>
+
+                    <div class="contact-data">
+                        <button id="contact-kevin" class="contact-btn">
+                            +49 179 4884497<br>
+                            kevin@titanagency.de
+                        </button>
+                    </div>
+                </section>
+            </article>
+        </div>
+
     </div>
-    <div class="Visitenkarten-container">
-        <article class="card">
-            <section class="card-main-info">
-                <img class="profile-img" src="./assets/Bildschirmfoto 2025-10-21 um 14.18.47.png" height="50px" alt="Profilbild">
-                <h2>
-                    Kevin Wellpott
-                </h2>
-                <p>Co-Founder der Titan GmbH</p>
-            </section>
 
-            <section class="card-side-info">
-                <p><img class="map-icon" src="./assets/mapmarker-icon.png" alt="Location Icon-2">Frankfurt </p>
-            </section>
-        </article>
-    </div>
-</div>
+    <!-- 👇 Wichtig: dein JavaScript wird hier eingebunden -->
+    <script src="script.js"></script>
+
+</body>
 
 </html>

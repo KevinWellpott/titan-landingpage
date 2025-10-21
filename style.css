@@ -25,25 +25,72 @@ body {
     height: 100vh;
 }
 
+
 .card {
-    width: 300px;
+    width: 400px;
     padding: 20px;
     margin-bottom: 20px;
+    min-height: 520px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    border: 1px solid rgb(43, 166, 57, 0.19);
+    gap: 16px;
     border-radius: 16px;
-    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    background-color: #000000;
     box-shadow: 0px 6px 10px rgba(97, 57, 137, 0.05),
         0px 24px 41px rgba(97, 57, 137, 0.10),
         0px 53px 92px rgba(97, 57, 137, 0.14),
         0px 95px 163px rgba(97, 57, 137, 0.19);
+    transform: translateZ(0);
+    isolation: isolate;
 }
 
-.visitenkarten-container{
-display: flex;
-flex-direction: row;
+.contact-data {
+    margin-top: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+}
+
+.contact-data .contact-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 80%;
+    padding: 12px 24px;
+    border: 1px solid grey;
+    border-radius: 24px;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    line-height: 1.35;
+    cursor: pointer;
+    outline: none;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.contact-data .contact-btn:hover {
+    border-color: #00ff88;
+    box-shadow: 0px 0px 5px rgba(244, 241, 241, 0.05),
+        0px 1px 41px rgba(244, 241, 241, 0.10),
+        0px 2px 92px rgba(244, 241, 241, 0.16),
+        0px 3px 163px rgba(244, 241, 241, 0.21);
+
+    transform: translateY(-2px);
+}
+
+.button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.visitenkarten-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 }
 
 .card-main-info {
@@ -52,26 +99,48 @@ flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 8px;
-
 }
 
 .card-side-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
+    flex-grow: 1;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
-.social-media-list {
-    list-style-type: none;
+
+
+.feature {
     display: flex;
-    flex-direction: row;
-    padding: 0;
-    justify-content: space-evenly;
-    margin-top: 16px;
+    align-items: flex-start;
+    /* sorgt für gleiche Oberkante */
+    gap: 10px;
+    /* Abstand zwischen Haken und Text */
+    width: 100%;
+    /* volle Breite */
+    text-align: left;
+    /* Text linksbündig */
 }
 
-.link-icon:hover {
-    filter: drop-shadow(0 0 8px green);
+.check {
+    flex-shrink: 0;
+    /* Haken bleibt fixiert */
+    font-size: 20px;
+    /* Haken-Größe */
+    line-height: 1.2;
+    margin-top: 2px;
+    /* optische Feinkorrektur */
+}
+
+.feature p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
 }
