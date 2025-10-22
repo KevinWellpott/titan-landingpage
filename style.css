@@ -16,7 +16,8 @@ body {
   overflow-x: hidden;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
@@ -37,6 +38,28 @@ html, body {
   background-color: black;
 }
 
+
+.cta-button {
+  background-color: #000;
+  display: flex;
+  width: 50%;
+  padding: 12px 24px;
+  border: 1px solid grey;
+  border-radius: 24px;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  -webkit-box-shadow: 3px 0px 43px -6px rgba(180, 55, 225, 0.66);
+  -moz-box-shadow: 3px 0px 43px -6px rgba(180, 55, 225, 0.66);
+  box-shadow: 3px 0px 43px -6px rgba(180, 55, 225, 0.66);
+}
+
+
+
 .logo-header {
   max-width: 140px;
 }
@@ -44,7 +67,9 @@ html, body {
 /* Navigation (Desktop) */
 .header-navbar-content {
   display: flex;
-  gap: 60px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
 }
 
 .header-navbar-content a {
@@ -360,25 +385,29 @@ html, body {
   }
 
 
-.card-slider {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: 24px;
-  padding: 20px 16px;            /* kein prozentuales Padding mehr */
-  scroll-padding: 0 16px;        /* Snap-Ausgleich */
-  justify-content: flex-start;
-  margin-top: 40px;
-}
+  .card-slider {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 24px;
+    padding: 20px 16px;
+    /* kein prozentuales Padding mehr */
+    scroll-padding: 0 16px;
+    /* Snap-Ausgleich */
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
 
 
-.visitenkarte {
-  flex: 0 0 85%;                 /* Jede Karte 85 % Breite */
-  scroll-snap-align: center;     /* mittig einrasten */
-  transition: transform 0.3s ease;
-}
+  .visitenkarte {
+    flex: 0 0 85%;
+    /* Jede Karte 85 % Breite */
+    scroll-snap-align: center;
+    /* mittig einrasten */
+    transition: transform 0.3s ease;
+  }
 
   .card {
     display: flex;
