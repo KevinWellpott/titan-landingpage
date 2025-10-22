@@ -39,3 +39,4 @@ slider.addEventListener('scroll', () => {
   progressBar.style.width = `${scrollPercent}%`;
 });
 
+
