@@ -186,19 +186,9 @@ body {
 
 
 /* === CARD LAYOUT === */
-.visitenkarten-wrapper {
-  margin-top: 42px;
-  display: block !important;
-  justify-content: center;
-  align-items: stretch;
-  /* Karten gleich ausgerichtet oben */
-  flex-wrap: wrap;
-  gap: 32px;
-  /* etwas mehr Abstand für Balance */
-  padding: 40px 0;
-}
 
-.cards-slider {
+
+.card-slider {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -206,11 +196,12 @@ body {
   flex-wrap: nowrap;
   padding: 40px 0;
   overflow: hidden;
+  margin-top: 50px;
 }
 
 .card {
   width: 90%;
-  max-width: 420px;
+  max-width: 100%;
   padding: 20px;
   border-radius: 16px;
   background-color: #000;
@@ -228,7 +219,7 @@ body {
 
 .card-kevin {
   width: 90%;
-  max-width: 420px;
+  max-width: 100%;
   padding: 20px;
   border-radius: 16px;
   background-color: #000;
@@ -323,8 +314,11 @@ body {
   /* Header */
   .header-navbar {
     justify-content: space-between;
-    /* Logo links, Burger rechts */
     padding: 0px 30px;
+    position: relative;
+    z-index: 10000;
+    background-color: black;
+    overflow: visible;
   }
 
   .burger-btn {
@@ -345,30 +339,35 @@ body {
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    display: none;
+    visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    z-index: 10001;
   }
 
-  .visitenkarten-wrapper {
+  .header-navbar-content.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  .card-slider {
     display: flex;
-    /* 🔥 sicherstellen, dass es Flex ist */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* Text in den Karten mittig */
-    gap: 20px;
-    padding: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 32px;                      /* etwas mehr Abstand für Peek-Effekt */
+    padding: 20px 10%;              /* sorgt für mittige Position */
+    scroll-padding: 10%;            /* zentriert den Snap mittig */
+    justify-content: flex-start;
   }
-
   .visitenkarte {
-    width: 90%;
-    /* nicht 100%, damit sie optisch zentriert wirkt */
-    margin: 20px auto;
-    max-width: 400px;
-    /* zentriert die Karte horizontal */
+    flex: 0 0 80%;                  /* jede Karte nimmt 80 % der Breite ein */
+    scroll-snap-align: center;      /* Karte wird mittig eingerastet */
+    transition: transform 0.3s ease;
   }
 
   .card {
@@ -405,10 +404,38 @@ body {
     padding: 20px;
   }
 
+  .slider-hint {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.slider-progress {
+  position: relative;
+  height: 4px;
+  width: 80px;
+  margin: 16px auto 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.slider-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #a67cff, #ffffff);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+
   .visitenkarte {
-    flex: 0 0 85%;                  /* jede Karte ~85% der Viewport-Breite */
+    flex: 0 0 70%;                  /* jede Karte ~85% der Viewport-Breite */
     scroll-snap-align: center;      /* zentriert beim Scrollen */
-    margin-right: 16px;
+    margin-right: 0px;
   }
 
   /* optional: Scrollbar ausblenden */

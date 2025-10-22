@@ -21,9 +21,21 @@ if (kevinButton) {
   });
 }
 
-const burgerBtn = document.getElementById("burger-btn");
-const navMenu = document.getElementById("nav-menu");
+const burger = document.querySelector('.burger-btn');
+const nav = document.querySelector('.header-navbar-content');
 
-burgerBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
+burger.addEventListener('click', () => {
+  nav.classList.toggle('active');
 });
+
+
+const slider = document.querySelector('.card-slider');
+const progressBar = document.querySelector('.slider-progress-bar');
+
+slider.addEventListener('scroll', () => {
+  const scrollLeft = slider.scrollLeft;
+  const scrollWidth = slider.scrollWidth - slider.clientWidth;
+  const scrollPercent = (scrollLeft / scrollWidth) * 100;
+  progressBar.style.width = `${scrollPercent}%`;
+});
+
