@@ -92,6 +92,11 @@ body {
   margin-top: 100px;
 }
 
+.erfahrungen-section h2{
+  text-align: center;
+  text-shadow: 0 0 20px rgb(151, 71, 255);
+}
+
 .tech-section {
   position: relative;
   background: #000;
@@ -111,6 +116,19 @@ body {
 }
 
 .tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  width: 140px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.tech-card-2 {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -170,7 +188,7 @@ body {
 /* === CARD LAYOUT === */
 .visitenkarten-wrapper {
   margin-top: 42px;
-  display: flex;
+  display: block !important;
   justify-content: center;
   align-items: stretch;
   /* Karten gleich ausgerichtet oben */
@@ -178,6 +196,16 @@ body {
   gap: 32px;
   /* etwas mehr Abstand für Balance */
   padding: 40px 0;
+}
+
+.cards-slider {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  flex-wrap: nowrap;
+  padding: 40px 0;
+  overflow: hidden;
 }
 
 .card {
@@ -241,9 +269,14 @@ body {
 /* === FEATURE LIST === */
 .feature {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   width: 100%;
+}
+
+.feature p{
+  padding-left: 16px;
+  text-align: left;
 }
 
 .check {
@@ -345,4 +378,42 @@ body {
     align-items: center;
     margin-left: 20px;
   }
+
+  .tech-center {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tech-center h2 {
+    font-size: 32px;
+  }
+
+  .tech-grid {
+    gap: 16px;
+  }
+
+  .tech-card-2 {
+    display: none;
+  }
+
+ .cards-slider {
+    display: flex;
+    overflow-x: auto;               /* horizontales Scrollen aktivieren */
+    scroll-snap-type: x mandatory;  /* sorgt fürs Einrasten */
+    -webkit-overflow-scrolling: touch; /* smoother Scroll auf iOS */
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .visitenkarte {
+    flex: 0 0 85%;                  /* jede Karte ~85% der Viewport-Breite */
+    scroll-snap-align: center;      /* zentriert beim Scrollen */
+    margin-right: 16px;
+  }
+
+  /* optional: Scrollbar ausblenden */
+  .cards-slider::-webkit-scrollbar {
+    display: none;
+  }
 }
+
