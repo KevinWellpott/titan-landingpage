@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: aliceblue;
 }
 
@@ -20,7 +20,8 @@ body {
 .header-navbar {
   position: relative;
   display: flex;
-  justify-content: space-between; /* Logo links, Burger rechts */
+  justify-content: space-between;
+  /* Logo links, Burger rechts */
   align-items: center;
   width: 100%;
   padding: 6px 60px;
@@ -68,13 +69,114 @@ body {
   transform: rotate(90deg);
 }
 
+/* === MAIN LAYOUT === */
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  /* maximale Breite, aber nicht mehr */
+  margin: 0 auto;
+  /* zentriert das Element horizontal */
+  padding: 0 20px;
+  /* etwas Innenabstand an den Seiten */
+}
+
+/* === ERFAHRUNGEN LAYOUT === */
+
+.erfahrungen-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.tech-section {
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  width: 140px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tech-card img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  filter: invert(1);
+  /* weiß auf schwarz */
+}
+
+.tech-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9));
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  backdrop-filter: blur(20px);
+}
+
+.tech-center h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tech-center p {
+  font-size: 16px;
+  opacity: 0.8;
+  line-height: 1.3;
+}
+
+
 /* === CARD LAYOUT === */
 .visitenkarten-wrapper {
-    margin-top: 42px;
+  margin-top: 42px;
   display: flex;
   justify-content: center;
+  align-items: stretch;
+  /* Karten gleich ausgerichtet oben */
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 32px;
+  /* etwas mehr Abstand für Balance */
   padding: 40px 0;
 }
 
@@ -93,6 +195,26 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
+  margin: 0 auto;
+}
+
+.card-kevin {
+  width: 90%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #000;
+  box-shadow:
+    0px 6px 10px rgba(97, 57, 137, 0.05),
+    0px 24px 41px rgba(97, 57, 137, 0.10),
+    0px 53px 92px rgba(97, 57, 137, 0.14),
+    0px 95px 163px rgba(97, 57, 137, 0.19);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 /* === CARD CONTENT === */
@@ -164,21 +286,25 @@ body {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 900px) {
+
   /* Header */
   .header-navbar {
-    justify-content: space-between; /* Logo links, Burger rechts */
+    justify-content: space-between;
+    /* Logo links, Burger rechts */
     padding: 0px 30px;
   }
 
   .burger-btn {
-    display: block; /* Burger sichtbar */
+    display: block;
+    /* Burger sichtbar */
   }
 
   /* Menü verstecken */
   .header-navbar-content {
     position: absolute;
     top: 100%;
-    right: 20px; /* Menü rechts ausklappend */
+    right: 20px;
+    /* Menü rechts ausklappend */
     background-color: black;
     flex-direction: column;
     align-items: flex-end;
@@ -193,19 +319,23 @@ body {
   }
 
   .visitenkarten-wrapper {
-    display: flex;                /* 🔥 sicherstellen, dass es Flex ist */
+    display: flex;
+    /* 🔥 sicherstellen, dass es Flex ist */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;           /* Text in den Karten mittig */
-    gap: 20px; 
-    padding: 0;                   
+    text-align: center;
+    /* Text in den Karten mittig */
+    gap: 20px;
+    padding: 0;
   }
 
   .visitenkarte {
-    width: 90%;                   /* nicht 100%, damit sie optisch zentriert wirkt */
+    width: 90%;
+    /* nicht 100%, damit sie optisch zentriert wirkt */
     margin: 20px auto;
-    max-width: 400px;               /* zentriert die Karte horizontal */
+    max-width: 400px;
+    /* zentriert die Karte horizontal */
   }
 
   .card {
