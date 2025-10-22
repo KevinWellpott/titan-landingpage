@@ -23,7 +23,7 @@ body {
   justify-content: space-between; /* Logo links, Burger rechts */
   align-items: center;
   width: 100%;
-  padding: 20px 60px;
+  padding: 6px 60px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.338);
   z-index: 10;
   background-color: black;
@@ -167,7 +167,7 @@ body {
   /* Header */
   .header-navbar {
     justify-content: space-between; /* Logo links, Burger rechts */
-    padding: 20px;
+    padding: 0px 30px;
   }
 
   .burger-btn {
@@ -192,20 +192,27 @@ body {
     transition: all 0.3s ease;
   }
 
-  /* Menü sichtbar */
-  .header-navbar-content.active {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Karten untereinander */
   .visitenkarten-wrapper {
+    display: flex;                /* 🔥 sicherstellen, dass es Flex ist */
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;           /* Text in den Karten mittig */
+    gap: 20px; 
+    padding: 0;                   
   }
 
   .visitenkarte {
-    width: 100%;
+    width: 90%;                   /* nicht 100%, damit sie optisch zentriert wirkt */
+    margin: 20px auto;
+    max-width: 400px;               /* zentriert die Karte horizontal */
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
   }
 }
