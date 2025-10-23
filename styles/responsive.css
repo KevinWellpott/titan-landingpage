@@ -100,22 +100,57 @@
     font-size: 1.3rem;
   }
 
-  /* === TECH SECTION === */
+  /* === ERFAHRUNGEN SECTION === */
+  .erfahrungen-section {
+    margin-top: 60px !important;
+    padding: 20px !important;
+    overflow: visible !important;
+  }
+
+  .main {
+    overflow: visible !important;
+  }
+
+  /* === TECH SECTION - KUGEL === */
+  .tech-section {
+    padding: 80px 0 60px 0 !important;
+    min-height: 500px !important;
+  }
+  
   .tech-center {
-    width: 140px;
-    height: 140px;
+    width: 120px !important;
+    height: 120px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
-
+  
   .tech-center h2 {
-    font-size: 32px;
+    font-size: 28px !important;
   }
-
+  
   .tech-center p {
-    font-size: 14px;
+    font-size: 12px !important;
+  }
+  
+  .tech-grid {
+    gap: 20px !important;
+    padding: 0 20px !important;
+    justify-content: space-around !important;
+  }
+  
+  .tech-card {
+    width: 100px !important;
+    height: 80px !important;
   }
 
-  .tech-grid {
-    gap: 16px;
+  .tech-card img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  .tech-card p {
+    font-size: 11px !important;
   }
 
   .tech-card-2 {
@@ -124,33 +159,47 @@
 
   /* === CARD SLIDER === */
   .slider-progress {
-    display: block;
+    display: block !important;
+    margin: 10px auto 0 !important;
   }
 
   .card-slider {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 24px;
-    padding: 20px 16px;
-    scroll-padding: 0 16px;
-    justify-content: flex-start;
-    margin-top: 40px;
+    display: flex !important;
+    overflow-x: scroll !important;
+    overflow-y: visible !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-behavior: smooth !important;
+    gap: 24px !important;
+    padding: 40px 16px 60px 16px !important;
+    scrollbar-width: none !important;
+    margin-top: 20px !important;
   }
-
+  
   .card-slider::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
-
+  
   .visitenkarte {
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-    width: 85%;
-    min-width: unset;
+    flex: 0 0 82% !important;
+    scroll-snap-align: center !important;
+    min-width: 280px !important;
+    max-width: 350px !important;
   }
-
-  .card {
-    margin-left: 0;
+  
+  .card,
+  .card-kevin {
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: 
+      0px 6px 10px rgba(97, 57, 137, 0.05),
+      0px 24px 41px rgba(97, 57, 137, 0.10),
+      0px 53px 92px rgba(97, 57, 137, 0.14),
+      0px 95px 163px rgba(97, 57, 137, 0.19) !important;
+  }
+  
+  .profile-img {
+    height: 120px !important;
   }
 
   /* === LEISTUNGEN SECTION === */
@@ -256,19 +305,49 @@
   }
 
   /* === TECH SECTION === */
+  .tech-section {
+    padding: 60px 0 40px 0 !important;
+    min-height: 400px !important;
+  }
+
   .tech-center {
-    width: 120px;
-    height: 120px;
+    width: 100px !important;
+    height: 100px !important;
   }
 
   .tech-center h2 {
-    font-size: 28px;
+    font-size: 24px !important;
   }
 
-  .tech-card,
-  .tech-card-2 {
-    width: 100px;
-    height: 80px;
+  .tech-center p {
+    font-size: 10px !important;
+  }
+
+  .tech-card {
+    width: 80px !important;
+    height: 70px !important;
+  }
+
+  .tech-card img {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .tech-card p {
+    font-size: 10px !important;
+  }
+
+  /* === CARD SLIDER === */
+  .card-slider {
+    gap: 20px !important;
+    padding: 30px 12px 50px 12px !important;
+    margin-top: 15px !important;
+  }
+
+  .visitenkarte {
+    flex: 0 0 85% !important;
+    min-width: 260px !important;
+    max-width: 320px !important;
   }
 
   /* === LEISTUNGEN === */
@@ -306,12 +385,54 @@
   .card-description {
     font-size: 0.9rem;
   }
-
-  .visitenkarte {
-    flex: 0 0 90%;
-    width: 90%;
-  }
 }
 
 
+/* === KONTAKT PAGE RESPONSIVE === */
+@media (max-width: 768px) {
+  .kontakt-wrapper {
+    padding: 60px 15px;
+  }
 
+  .kontakt-container {
+    padding: 40px 25px;
+  }
+
+  .kontakt-header h1 {
+    font-size: 2rem;
+  }
+
+  .kontakt-header p {
+    font-size: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .submit-btn {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .kontakt-header p br {
+    display: none;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 14px 16px;
+  }
+
+  .kontakt-container {
+    padding: 30px 20px;
+  }
+}

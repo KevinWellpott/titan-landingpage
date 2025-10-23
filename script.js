@@ -6,7 +6,7 @@ const simonButton = document.getElementById("contact-simon");
 if (simonButton) {
   simonButton.addEventListener("click", function() {
     console.log("Simon-Button geklickt ✅");
-    window.open("/kontakt.html");
+    window.open("kontakt.html");
   });
 }
 
@@ -16,7 +16,7 @@ const logotitan = document.getElementById("logotitan");
 if (logotitan) {
   logotitan.addEventListener("click", function() {
     console.log("titanButton geklickt ✅");
-    window.open("/index.html");
+    window.open("index.html");
   });
 }
 
@@ -26,7 +26,7 @@ const kevinButton = document.getElementById("contact-kevin");
 if (kevinButton) {
   kevinButton.addEventListener("click", function() {
     console.log("Kevin-Button geklickt ✅");
-    window.open("/kontakt.html");
+    window.open("kontakt.html");
   });
 }
 
