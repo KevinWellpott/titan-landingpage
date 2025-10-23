@@ -1,0 +1,151 @@
+/* ========================================
+   GLOBAL.CSS
+   Grundlegende Styles für ALLE Seiten
+   - Reset & Base Styles
+   - Header & Navigation
+   - Buttons (CTA)
+======================================== */
+
+/* === RESET & BASE === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: aliceblue;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+/* === HEADER & NAVIGATION === */
+
+.header-navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 60px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.338);
+  z-index: 10000;
+  background-color: black;
+}
+
+.logo-header {
+  max-width: 140px;
+  height: auto;
+}
+
+.header-navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.header-navbar-content a {
+  color: white !important;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.header-navbar-content a:hover {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+
+/* === CTA BUTTONS (überall verwendet) === */
+
+.header-navbar-content .cta-button,
+.cta-hero {
+  all: unset;
+  position: relative;
+  display: inline-block;
+  padding: 14px 38px;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 3px 0px 43px -6px rgba(180, 55, 225, 0.66);
+}
+
+/* Glow-Effekt mit ::before */
+.header-navbar-content .cta-button::before,
+.cta-hero::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle at center, rgba(90, 255, 120, 0.55) 0%, transparent 70%);
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: -1;
+}
+
+.header-navbar-content .cta-button:hover::before,
+.cta-hero:hover::before {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+.header-navbar-content .cta-button:hover,
+.cta-hero:hover {
+  border-color: rgba(90, 255, 120, 0.55);
+  box-shadow: 3px 0px 43px -6px rgba(90, 255, 120, 0.66);
+  transform: translateY(-2px);
+}
+
+
+/* === BURGER MENU === */
+
+.burger-btn {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 20000;
+  transition: transform 0.3s ease;
+}
+
+.burger-btn.active {
+  transform: rotate(90deg);
+}
+
+
+/* === MAIN CONTAINER === */
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: visible;
+}

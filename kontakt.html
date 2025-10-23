@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Titan GmbH</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/contact.css">
+     <link rel="stylesheet" href="styles/contact-responsive.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header-navbar">
+        <img src="./assets/Titan-logo.png" alt="Titan Logo" class="logo-header" id="logotitan">
+       
+    </header>
+
+    <!-- Kontakt Container -->
+    <div class="kontakt-wrapper">
+        <div class="kontakt-container">
+
+            <!-- Header -->
+            <div class="kontakt-header">
+                <h1>Kontaktieren Sie uns</h1>
+                <p>Lassen Sie uns gemeinsam Ihr digitales Projekt verwirklichen.<br>
+                    Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden.</p>
+            </div>
+
+            <!-- Form -->
+            <form class="kontakt-form" id="kontakt-form">
+
+                <!-- Name & Email -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Ihr Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail Adresse *</label>
+                        <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+                    </div>
+                </div>
+
+                <!-- Telefon & Firma -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefon">Telefonnummer</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="+49 123 456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="firma">Firma / Unternehmen</label>
+                        <input type="text" id="firma" name="firma" placeholder="Ihre Firma GmbH">
+                    </div>
+                </div>
+
+                <!-- Service Auswahl -->
+                <div class="form-group">
+                    <label for="service">Interessiert an *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="webdesign">Webdesign & Entwicklung</option>
+                        <option value="seo">SEO & Online Marketing</option>
+                        <option value="it">IT-Infrastruktur & Automatisierung</option>
+                        <option value="app">App Entwicklung</option>
+                        <option value="beratung">Beratung & Strategie</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                </div>
+
+                <!-- Budget Slider -->
+                <div class="form-group">
+                    <label for="budget">Geplantes Budget: <span id="budget-value">5.000 €</span></label>
+                    <input type="range" id="budget" name="budget" min="1000" max="50000" step="1000" value="5000"
+                        class="budget-slider">
+                    <div class="budget-labels">
+                        <span>1.000 €</span>
+                        <span>50.000 €+</span>
+                    </div>
+                </div>
+
+                <!-- Nachricht -->
+                <div class="form-group">
+                    <label for="nachricht">Ihre Nachricht *</label>
+                    <textarea id="nachricht" name="nachricht" rows="6" placeholder="Beschreiben Sie Ihr Projekt..."
+                        required></textarea>
+                </div>
+
+                <!-- Datenschutz -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="datenschutz" name="datenschutz" required>
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und
+                            akzeptiere diese.</span>
+                    </label>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    <span>Anfrage absenden</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Success Message -->
+                <div class="success-message" id="success-message">
+                    ✓ Vielen Dank! Ihre Anfrage wurde erfolgreich versendet.
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>

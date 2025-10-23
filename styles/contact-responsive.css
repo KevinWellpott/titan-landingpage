@@ -1,0 +1,47 @@
+@media (max-width: 768px) {
+    .kontakt-wrapper {
+        padding: 60px 15px;
+    }
+
+    .kontakt-container {
+        padding: 40px 25px;
+    }
+
+    .kontakt-header h1 {
+        font-size: 2rem;
+    }
+
+    .kontakt-header p {
+        font-size: 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .submit-btn {
+        padding: 16px 32px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .kontakt-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .kontakt-header p br {
+        display: none;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 14px 16px;
+    }
+
+    .kontakt-container {
+        padding: 30px 20px;
+    }
+}

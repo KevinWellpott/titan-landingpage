@@ -1,0 +1,317 @@
+/* ========================================
+   RESPONSIVE.CSS
+   Alle Media Queries zentral
+   - Tablet (1024px)
+   - Mobile (900px)
+   - Small Mobile (480px)
+======================================== */
+
+
+/* === TABLET (bis 1024px) === */
+@media (max-width: 1024px) {
+  
+  .header-navbar {
+    padding: 6px 40px;
+  }
+
+  .titan-section h1 {
+    font-size: 4.5rem;
+  }
+
+  .tech-grid {
+    gap: 20px;
+  }
+
+  .leistungen-section {
+    padding: 60px 30px;
+    margin: 80px auto;
+  }
+
+  .leistungen-header h2 {
+    font-size: 2rem;
+  }
+
+  .glass-card {
+    max-width: 480px;
+  }
+}
+
+
+/* === MOBILE (bis 900px) === */
+@media (max-width: 900px) {
+  
+  /* === HEADER === */
+  .header-navbar {
+    justify-content: space-between;
+    padding: 6px 30px;
+  }
+
+  .burger-btn {
+    display: block;
+  }
+
+  .header-navbar-content {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10001;
+  }
+
+  .header-navbar-content.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* === HERO SECTION === */
+  .hero {
+    height: 70vh;
+  }
+
+  .titan-section-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .titan-section {
+    padding-bottom: 80px;
+  }
+
+  .titan-section h1 {
+    font-size: 3rem;
+  }
+
+  .titan-section h2 {
+    font-size: 1rem;
+  }
+
+  .titan-section h3 {
+    font-size: 1.3rem;
+  }
+
+  /* === TECH SECTION === */
+  .tech-center {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tech-center h2 {
+    font-size: 32px;
+  }
+
+  .tech-center p {
+    font-size: 14px;
+  }
+
+  .tech-grid {
+    gap: 16px;
+  }
+
+  .tech-card-2 {
+    display: none;
+  }
+
+  /* === CARD SLIDER === */
+  .slider-progress {
+    display: block;
+  }
+
+  .card-slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 24px;
+    padding: 20px 16px;
+    scroll-padding: 0 16px;
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+
+  .card-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .visitenkarte {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    width: 85%;
+    min-width: unset;
+  }
+
+  .card {
+    margin-left: 0;
+  }
+
+  /* === LEISTUNGEN SECTION === */
+  .leistungen-section {
+    padding: 50px 20px;
+    margin: 60px auto;
+  }
+
+  .leistungen-header h2 {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .leistungen-header h2 br,
+  .leistungen-subtext br,
+  .card-description br {
+    display: none;
+  }
+
+  .leistungen-subtext {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .glass-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 25px;
+  }
+
+  .card-icon {
+    height: 200px;
+    max-width: 300px;
+  }
+
+  .keyboard-mockup {
+    padding: 12px;
+    gap: 4px;
+  }
+
+  .key {
+    max-width: 32px;
+    height: 32px;
+    font-size: 9px;
+    border-radius: 4px;
+  }
+
+  .key.wide {
+    max-width: 55px;
+    font-size: 8px;
+  }
+
+  .lightning-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* === SMALL MOBILE (bis 480px) === */
+@media (max-width: 480px) {
+  
+  /* === HEADER === */
+  .header-navbar {
+    padding: 6px 20px;
+  }
+
+  .logo-header {
+    max-width: 110px;
+  }
+
+  /* === HERO === */
+  .titan-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .titan-section h2 {
+    font-size: 0.9rem;
+  }
+
+  .titan-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .titan-section-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* === TECH SECTION === */
+  .tech-center {
+    width: 120px;
+    height: 120px;
+  }
+
+  .tech-center h2 {
+    font-size: 28px;
+  }
+
+  .tech-card,
+  .tech-card-2 {
+    width: 100px;
+    height: 80px;
+  }
+
+  /* === LEISTUNGEN === */
+  .leistungen-section {
+    padding: 40px 15px;
+  }
+
+  .leistungen-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .glass-card {
+    padding: 35px 20px;
+  }
+
+  .card-icon {
+    height: 180px;
+  }
+
+  .key {
+    max-width: 28px;
+    height: 28px;
+    font-size: 8px;
+  }
+
+  .key.wide {
+    max-width: 48px;
+    font-size: 7px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+
+  .visitenkarte {
+    flex: 0 0 90%;
+    width: 90%;
+  }
+}
+
+
+
